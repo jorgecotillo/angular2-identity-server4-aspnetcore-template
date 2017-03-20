@@ -66,6 +66,18 @@ const settings: any = {
   loadUserInfo: process.env.loadUserInfo
 };
 ```
+
+Authentication files
+-------------
+This sample application has three main files to manage authentication all under ClientApp - app - components - shared - services folder:
+
+**auth-guard.service.ts** - this module is in charge of validating if a user has been successfully authenticated or not, granting or denying access to secured module. In order to secure a module, open up app.module.ts (under ClientApp - app) and look at counter and fetch-data (under imports section) you will see the property *canActivate*, this property along with the declaration under *providers* section are the ones required to secure your angular2 modules.
+
+**auth.service.ts** - this module contains the necessary functions to log a user in or out, additionally it provides wrappers to HTTP calls.
+
+**global.events.manager.ts** - this module exposes an Observable<boolean> that is in charge of sending a notification to our navmenu module in order to display additional menu items after a user has been successfully logged in. Under *auth.service.ts - endSigninMainWindow function* you will notice a reference to this module and is passing the value of true, now if you open up *navmenu.component.ts* you will notice that we are subscribing to this observable.
+
+
 ### Support StackEdit
 
 [![](https://cdn.monetizejs.com/resources/button-32.png)](https://monetizejs.com/authorize?client_id=ESTHdCYOi18iLhhO&summary=true)
