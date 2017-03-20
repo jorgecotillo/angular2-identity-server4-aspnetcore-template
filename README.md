@@ -3,13 +3,40 @@ Angular2 & ASP.NET Core + IdentityServer4
 
 The following project provides the necessary code to run an Angular2 application  - **Typescript and Webpack** - running on ASP.NET Core and connecting to an OpenID Connect implementation - **IdentityServer4**.
 
-Hey! I'm your first Markdown document in **StackEdit**[^stackedit]. Don't delete me, I'm very helpful! I can be recovered anyway in the **Utils** tab of the <i class="icon-cog"></i> **Settings** dialog.
-
 ----------
 
-Documents
+Running the application
 -------------
 
+You'll have to run the following commands: (for more detailed information refer to this [post][1]
+
+- dotnet restore
+- dotnet publish
+>**Note:**
+> If you ran into an error related to typings when running dotnet publish, then run the following command:
+> 
+> **npm install typings** 
+> 
+> Finally proceed to run **dotnet publish** again
+
+Now that you have all the packages restored (nuget and npm) we'll proceed to run or debug the application.
+
+If you want to run the application, run the following command:
+
+ - dotnet run
+
+If you want to run the application (in Development mode), run the following command:
+
+ - dotnet run --environment="Development"
+
+To debug the code, simply debug the code in either Visual Studio Preview for Mac of Visual Studio Code.
+>**Note:**
+>
+>I just found out that if I want to open the solution file in Visual Studio 2017 it doesn't work, if you want to open the project in Visual Studio 2017 open the csproj file instead.
+
+
+
+and 
 StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**
 
 > **Note:**
@@ -253,7 +280,7 @@ cond(no)->op
   [^stackedit]: [StackEdit](https://stackedit.io/) is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.
 
 
-  [1]: http://math.stackexchange.com/
+  [1]: https://medium.com/@jorge.cotillo/asp-net-core-angular2-openid-connect-using-visual-studio-code-ed10327bb31a#.5gbeo8jph
   [2]: http://daringfireball.net/projects/markdown/syntax "Markdown"
   [3]: https://github.com/jmcmanus/pagedown-extra "Pagedown Extra"
   [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
