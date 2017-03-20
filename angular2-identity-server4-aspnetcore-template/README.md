@@ -5,13 +5,6 @@ The following project provides the necessary code to run an Angular2 application
 
 ----------
 
-### Table of contents
-
-You can insert a table of contents using the marker `[TOC]`:
-
-[TOC]
-
-
 Running the application
 -------------
 
@@ -59,25 +52,25 @@ These two files are being referenced by Webpack, these settings are available in
  - and more ...
 
 If you are wondering how we are inserting these settings into Webpack, open up **webpack.config.js**, after all the variable declarations you will notice an if statement, this is used to switch between *Development* or *Production* settings, now, scroll down towards the plugins section, definePlugin is used to define the different settings - to retrieve them, use (in this case) process.env.your_setting - open up auth.service.ts and look towards the end of the file:
-
-`const settings: any = {`
-  `authority: process.env.authority,`
-  `client_id: process.env.client_id,`
-  `redirect_uri: process.env.redirect_uri,`
-  `post_logout_redirect_uri: `
-  `process.env.post_logout_redirect_uri,`
-  `response_type: process.env.response_type,`
-  `scope: process.env.scope,`
-  `silent_redirect_uri: process.env.silent_redirect_uri,`
-  `filterProtocolClaims: process.env.filterProtocolClaims,`
-  `loadUserInfo: process.env.loadUserInfo`
-`};`
-
+```
+const settings: any = {
+  authority: process.env.authority,
+  client_id: process.env.client_id,
+  redirect_uri: process.env.redirect_uri,
+  post_logout_redirect_uri: 
+  process.env.post_logout_redirect_uri,
+  response_type: process.env.response_type,
+  scope: process.env.scope,
+  silent_redirect_uri: process.env.silent_redirect_uri,
+  filterProtocolClaims: process.env.filterProtocolClaims,
+  loadUserInfo: process.env.loadUserInfo
+};
+```
 ### Support StackEdit
 
 [![](https://cdn.monetizejs.com/resources/button-32.png)](https://monetizejs.com/authorize?client_id=ESTHdCYOi18iLhhO&summary=true)
 
-  [^stackedit]: [StackEdit](https://stackedit.io/) is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.
+[StackEdit](https://stackedit.io/) is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.
 
 
   [1]: https://medium.com/@jorge.cotillo/asp-net-core-angular2-openid-connect-using-visual-studio-code-ed10327bb31a#.5gbeo8jph
